@@ -71,7 +71,7 @@
     };
 
 // Q8 連想配列-2
-$name = [
+  $name = [
     '東京都',
     '神奈川県',
     '埼玉県',
@@ -81,7 +81,7 @@ $name = [
     '群馬県'
     ];
 
-$x = [
+  $x = [
     '東京都' => '新宿区',
     '神奈川県' => '横浜市',
     '埼玉県'=> 'さいたま市',
@@ -98,7 +98,7 @@ $x = [
     };
 
 // Q9 連想配列-3
-$name = [
+  $name = [
     '東京都',
     '神奈川県',
     '埼玉県',
@@ -110,7 +110,7 @@ $name = [
     '大阪府'
     ];
 
-$east = [
+  $east = [
     '東京都' => '新宿区',
     '神奈川県' => '横浜市',
     '埼玉県'=> 'さいたま市',
@@ -131,15 +131,58 @@ $east = [
   }
 
 // Q10 関数-1
-
+  function SayHi($name){
+    
+    return $name . 'さん、こんにちは。';
+  }
+    echo SayHi ('金谷')."\n";
+    echo SayHi ('安藤')
 
 // Q11 関数-2
-
+  function calcTaxInPrice($price){
+    return $price *  1.1;
+  }
+    $price = 1000;
+    $TaxInPrice = calcTaxInPrice($price);
+    
+    echo $price . "円の商品の税込み価格は" . $TaxInPrice . "円です。";
 
 // Q12 関数とif文
-
+  function distinguishNum($num){
+    
+    if ($num % 2 == 0){
+        
+        return $num . "は偶数です。";
+    } else {
+        return $num . "は奇数です。";
+    }
+  }   
+    echo distinguishNum(11)."\n";
+    echo distinguishNum(24);
 
 // Q13 関数とswitch文
-
+  function evaluateGrade($grade){
+    
+    switch ($grade) {
+        case 'A':
+        case 'B':
+            return "合格です。";
+            break;
+            
+        case 'C':
+            return "合格ですが追加課題があります。";
+            break;
+            
+        case 'D':
+            return "不合格です。";
+            break;
+         
+        default :
+            return "判定不明です。講師に問い合わせてください。" ;
+            break;
+    }
+  }        
+     echo evaluateGrade("A") . "\n";
+     echo evaluateGrade("F");
 
 ?>
