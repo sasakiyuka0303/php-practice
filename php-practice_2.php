@@ -49,7 +49,7 @@ foreach ($personalInfos as $person){
 //3//
 $ageList = [25, 30, 18];
     
-    foreach ($personalInfos as $key => $person){
+    foreach ($personalInfos as $key=>$person){
         $personalInfos[$key]['age'] = $ageList[$key];
     }
     
@@ -103,15 +103,26 @@ $yamada->attend('PHP');
 // Q5 定義済みクラス
 //1//
 $date = new DateTime();
-$date -> modify('-1 month');
+$date->modify('-1 month');
 
-echo $date -> format('Y-m-d');
+echo $date->format('Y-m-d');
+//修正//
+$date = new DateTime();
+
+    echo $date->modify('-1 month')->format('Y-m-d');
 
 //2//
 $today = new DateTime();
 $birthday = new DateTime('1992-04-25');
 
-$diff = $today -> diff($birthday);
+$diff = $today->diff($birthday);
 
-echo "あの日から{$diff -> days}日経過しました。"
+echo "あの日から{$diff->days}日経過しました。";
+
+//修正//
+$today = new DateTime();
+$birthday = new DateTime('1992-04-25');
+
+
+echo "あの日から{$today->diff($birthday)->days}日経過しました。";
 ?>
